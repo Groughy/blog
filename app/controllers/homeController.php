@@ -1,5 +1,5 @@
 <?php
-echo "BONJOUR PARIS !";
-include ('../persistances/blogPostData.php');
-include ('../../database/lastBlogPosts.sql');
-var_dump(lastPostData($pdo));
+echo "BONJOUR NEW !";
+include '/var/www/blog/app/persistances/blogPostData.php';
+$post = lastPostData($pdo);
+var_dump($post);
