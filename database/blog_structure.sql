@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `u_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nickname` VARCHAR(45) NULL,
   `name` VARCHAR(45) NULL,
+    `firstName` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `nickname_UNIQUE` (`nickname` ASC) VISIBLE)
 ENGINE = InnoDB;

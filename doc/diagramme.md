@@ -24,3 +24,21 @@ E --> F{more blogpost?}
 F -- Yes --> E
 F -- No --> G[End]
 ```
+
+```mermaid 
+sequenceDiagram
+    User->>index.php: ?action=blogPost&id=2
+    index.php->>homeController.php: include
+    homeController.php->>blogPostData.php: lastBlogPosts()
+    blogPostData.php->>PDO: prepare()
+    PDO-->>blogPostData.php: PDOStatement
+    blogPostData.php->>PDOStatement: execute()
+    PDOStatement-->>blogPostData.php: isSuccess
+    blogPostData.php->>PDOStatement: fetchAll()
+    PDOStatement->>blogPostController.php: id=2
+    blogPostController.php-->>PDOStatement: isSuccess
+    PDOStatement-->>blogPostData.php: blogPosts&id=2
+    blogPostData.php-->>homeController.php: blogPosts&id=2
+    homeController.php->>home.tpl.php: blogPosts&id=2
+    home.tpl.php-->>User: display blogPosts&id=2
+```
