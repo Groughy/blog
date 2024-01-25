@@ -1,5 +1,5 @@
 <?php
 echo "BONJOUR NEW !";
-include '/var/www/blog/app/persistances/blogPostData.php';
-$post = lastPostData($pdo);
-var_dump($post);
+include '../app/persistances/blogPostData.php';
+
+include '../ressources/views/home.tpl.php';
