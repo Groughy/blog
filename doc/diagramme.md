@@ -1,4 +1,7 @@
 ```mermaid
+---
+title : Sequence affichage liste
+---
 sequenceDiagram
 User->>index.php: ?action=
 index.php->>homeController.php: include
@@ -15,6 +18,9 @@ home.tpl.php-->>User: display blogPosts
 ```
 
 ```mermaid
+---
+title : Graph affichage liste
+---
 graph TD
 A[Start] --> B[get all posts from database]
 B --> C{no blog post ?}
@@ -26,6 +32,9 @@ F -- No --> G[End]
 ```
 
 ```mermaid 
+---
+title : Séquence blogPostController
+---
 sequenceDiagram
     User->>index.php: ?action=blogPost&id=2
     index.php->>homeController.php: include

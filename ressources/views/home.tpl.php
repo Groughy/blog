@@ -1,8 +1,6 @@
 <?php
 include '../ressources/views/layouts/header.tpl.php';
 
-$post = lastPostData($pdo);
-
 if(!isset($post)){
 echo "Il n'y a pas de Blog ici";
 }
@@ -19,6 +17,6 @@ else{
         echo $row["nickname"]. "     ";
         echo $row["name"]. "     <br>";
     }
-/*    var_dump($post);*/
+
 }
 include '../ressources/views/layouts/footer.tpl.php';

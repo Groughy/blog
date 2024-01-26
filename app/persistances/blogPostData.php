@@ -1,5 +1,5 @@
 <?php
-function lastPostData($pdo)
+function lastPostData(PDO $pdo)
 {
     $statement = $pdo->query('SELECT *
         FROM Posts
@@ -9,3 +9,15 @@ ORDER BY Posts.id DESC
 LIMIT 10');
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
+/*function blogPostByid(PDO $pdo, Posts.id)
+{
+
+    return;
+}
+
+function commentsByBlogPost(PDO $pdo)
+{
+
+    return;
+}*/
