@@ -10,14 +10,23 @@ LIMIT 10');
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-/*function blogPostByid(PDO $pdo, Posts.id)
+$Postsid = $pdo->query('SELECT Posts.id
+FROM Posts');
+function blogPostByid(PDO $pdo, $Postsid)
 {
-
-    return;
+    $getId = $pdo->query('SELECT Posts.id, Posts.content, Users.name
+    FROM Posts
+            JOIN Users
+        WHERE users_id = Users.id
+            ');
+    return $getId;
 }
 
-function commentsByBlogPost(PDO $pdo)
+function commentsByBlogPost(PDO $pdo, PDO $Postsid)
 {
-
-    return;
-}*/
+    $getCom = $pdo->query('SELECT Comments.content, Users.name
+FROM Comments
+JOIN Users
+Where users_id = Users.id');
+    return $getCom;
+}

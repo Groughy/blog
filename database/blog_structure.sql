@@ -71,13 +71,18 @@ CREATE TABLE IF NOT EXISTS `Comments` (
   `content` VARCHAR(150) NULL,
   `addTime` DATETIME NULL,
   `posts_id` INT NOT NULL,
+  `users_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_COMMENTAIRES_POSTS1_idx` (`posts_id` ASC) VISIBLE,
-  CONSTRAINT `fk_COMMENTAIRES_POSTS1`
+  INDEX `fk_COMMENTS_POSTS1_idx` (`posts_id` ASC) VISIBLE,
+  CONSTRAINT `fk_COMMENTS_POSTS1`
     FOREIGN KEY (`posts_id`)
-    REFERENCES `Posts` (`id`)
+    REFERENCES `Posts` (`id`),
+    INDEX `fk_COMMENTS_USERS1_idx` (`users_id` ASC) VISIBLE,
+    CONSTRAINT `fk_COMMENTS_USERS1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `Users` (`u_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+       ON UPDATE NO ACTION);
 ENGINE = InnoDB;
 
 
