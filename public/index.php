@@ -15,7 +15,7 @@ if(empty($action)){
 }
 $routes=array(
     '/' => '../app/controllers/homeController.php',
-    "createarticle" => '../app/controllers/blogPostCreateController.php',
+    "createarticle" => '../app/controllers/blogPostCreateController.php');
 if (isset($routes[$action])){
     include $routes[$action];}
 
