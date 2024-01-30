@@ -36,3 +36,9 @@ function blogPostCreate (PDO $pdo, $post_name, $post_content):void{
 VALUES ('$post_name', '2', '$post_content', CURDATE())
 ");
 }
+
+function blogPostUpdate(PDO $pdo, $posts_id, $post_name, $post_content):void{
+$pdo->query("UPDATE Posts
+SET title =$post_name, content=$post_content
+WHERE Posts_id=$posts_id");
+}
