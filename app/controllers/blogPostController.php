@@ -2,7 +2,7 @@
 echo "Longue vie au ROI !";
 include '../app/persistances/blogPostData.php';
 global $pdo;
-$Postsid = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-
-blogPostByid($pdo, $Postsid);
-commentsByBlogPost($pdo, $Postsid);
+global $posts_id;
+$contentblogPost = blogPostByid($pdo, $posts_id);
+$getCom = commentsByBlogPost($pdo, $posts_id);
+include '../ressources/views/blogPost.tpl.php';
