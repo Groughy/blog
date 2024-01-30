@@ -15,7 +15,8 @@ if(empty($action)){
 }
 $routes=array(
     'index'=> '../public/index.php',
-    '/' => '../app/controllers/homeController.php');
+    '/' => '../app/controllers/homeController.php',
+    'newarticle' => '../app/controller/blogPostCreateController.php');
 if (isset($routes[$action])){
     include $routes[$action];}
 if($action == "blogpost" &&  isset($posts_id)){
