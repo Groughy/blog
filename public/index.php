@@ -19,5 +19,9 @@ $routes=array(
     'newarticle' => '../app/controller/blogPostCreateController.php');
 if (isset($routes[$action])){
     include $routes[$action];}
+
+/**************
+ * Recherche de l'id du post
+ **************/
 if($action == "blogpost" &&  isset($posts_id)){
     include "../app/controllers/blogPostController.php";}

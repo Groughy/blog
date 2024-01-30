@@ -31,3 +31,10 @@ JOIN Users
 Where users_id = Users.id AND posts_id=$posts_id");
     return $getCom->fetchAll();
 }
+
+function blogPostCreate (PDO $pdo, $post_name, $post_author, $post_content){
+    $post_create = $pdo->query("INSERT INTO Posts (title, users_id, content, dateForm)
+VALUES ($post_name, $post_author, $post_content, CURDATE())
+");
+    return $post_create->fetchAll();
+}

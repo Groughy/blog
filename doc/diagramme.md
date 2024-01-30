@@ -51,3 +51,23 @@ sequenceDiagram
     homeController.php->>home.tpl.php: blogPosts&id=2
     home.tpl.php-->>User: display blogPosts&id=2
 ```
+
+```mermaid
+---
+title : Séquence blogPostCreateController
+---
+sequenceDiagram
+User->>index.php: ?action=newarticle
+index.php->>blogPostCreateController.php: include
+blogPostCreateController.php->>blogPostData.php:blogPostCreate()
+blogPostData.php->>PDO: prepare()
+PDO-->>blogPostData.php: PDOStatement
+blogPostData.php->>PDOStatement: execute()
+PDOStatement-->>blogPostData.php: isSuccess
+blogPostData.php->>PDOStatement: fetchAll()
+PDOStatement-->>blogPostData.php: blogPosts
+blogPostData.php-->>blogPostCreateController.php: blogPosts
+blogPostCreateController.php->>blogPostCreate.tpl.php: blogPosts
+blogPostCreate.tpl.php-->>blogPostController.php: display blogPosts
+blogPostController.php-->>User:display new article
+```
