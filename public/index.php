@@ -26,3 +26,6 @@ if($action == "blogpost" &&  isset($posts_id)){
     include "../app/controllers/blogPostController.php";}
 if($action == "updatepost" &&  isset($posts_id)){
     include "../app/controllers/blogPostModifyController.php";}
+if($action == "deletepost" && isset($posts_id)){
+    include "../app/controllers/blogPostDeleteController.php";
+}

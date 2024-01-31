@@ -5,8 +5,6 @@ global $posts_id?>
         <form action="../index.php?action=updatepost&id=<?= $posts_id?>" method="POST">
             <br> <label for="title">Titre de l'article</label><br>
             <input type="text" id="title" name="title"><br>
-            <label for="numero">Numéro de l'article</label><br>
-            <input type="number" id="id" name="id"><br>
             <span>Contenu de l'article</span>
             <textarea name="content" style="width: 60%; height: 20%;">
             Contenu de l'article à modifier
