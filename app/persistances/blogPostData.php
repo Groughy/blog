@@ -10,14 +10,14 @@ LIMIT 10');
     return $statement->fetchAll();
 }
 
-$postsid = $pdo->query('SELECT Posts.id
+$postsid = $pdo->query('SELECT id
 FROM Posts');
 function blogPostByid(PDO $pdo, $posts_id)
 {
     $contentblogPost = $pdo->query("SELECT Posts.id, Posts.title, Posts.content, Posts.dateFrom, Posts.dateUntil, Users.nickname
     FROM Posts
             JOIN Users
-        WHERE users_id = Users.id AND Posts.id=$posts_id
+        WHERE users_id = Users.id AND Posts.id='$posts_id'
             ");
     return $contentblogPost->fetchAll();
 }
@@ -37,8 +37,9 @@ VALUES ('$post_name', '2', '$post_content', CURDATE())
 ");
 }
 
-function blogPostUpdate(PDO $pdo, $posts_id, $post_name, $post_content):void{
-$pdo->query("UPDATE Posts
-SET title =$post_name, content=$post_content
-WHERE Posts_id=$posts_id");
+function blogPostUpdate(PDO $pdo, $posts_id, $post_name, $post_content){
+$update = $pdo->query("UPDATE Posts
+SET title ='$post_name', content='$post_content'
+WHERE id='$posts_id'");
+return $update;
 }

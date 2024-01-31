@@ -3,7 +3,7 @@ include '../ressources/views/layouts/header.tpl.php';?>
 <html>
     <div class="formulaire"><p>Merci d'être venu visité mon site. Pour plus d'informations, veuillez remplir le
             formulaire si dessous avec le plus d'élément possible.</p>
-        <form action="../index.php?action=createarticle" method="POST">
+        <form action="../index.php?action=createpost" method="POST">
             <br> <label for="title">Titre de l'article</label><br>
             <input type="text" id="title" name="title"><br>
                 <span>Contenu de l'article</span>
