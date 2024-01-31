@@ -1,5 +1,5 @@
 <?php
-/*************************
+/***************************
  * Inclusion de la database.
  **************************/
 include ('../config/database.php');
@@ -19,13 +19,23 @@ $routes=array(
 if (isset($routes[$action])){
     include $routes[$action];}
 
-/**************
+/***************************
  * Recherche de l'id du post
- **************/
+ ***************************/
 if($action == "blogpost" &&  isset($posts_id)){
     include "../app/controllers/blogPostController.php";}
+
+/******************************
+ * Recherche du post à Modifier
+ ******************************/
+
 if($action == "updatepost" &&  isset($posts_id)){
     include "../app/controllers/blogPostModifyController.php";}
+
+/********************************
+ * Recherche du post à Supprimer
+ ********************************/
+
 if($action == "deletepost" && isset($posts_id)){
     include "../app/controllers/blogPostDeleteController.php";
 }
